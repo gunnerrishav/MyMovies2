@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         val moviesCall = retrofitHelper.getApiService().getMovieList()
         moviesCall.enqueue(object : retrofit2.Callback<Movies> {
-            override fun onResponse(call: Call<Movies>?, response: Response<Movies>) {
+            override fun onResponse(call: Call<Movies>, response: Response<Movies>) {
                 if (response.isSuccessful) {
                     val movies = response.body()
                     //save movies db to realm
